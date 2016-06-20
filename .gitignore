@@ -50,6 +50,7 @@ wp-content/*
 # Ignore everything in "plugins" except certain plugins. #
 # ========================================================== #
 wp-content/plugins/*
+!wp-content/plugins/vdf-functionality/
 
 # Ignore everything in "themes" except the active theme. #
 # ========================================================== #

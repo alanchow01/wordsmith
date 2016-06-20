@@ -111,10 +111,24 @@ function feistner_widgets_init() {
 add_action( 'widgets_init', 'feistner_widgets_init' );
 
 /**
+ * Filter the stylesheet_uri to putput the minified CSS file.
+ */
+function feistner_minified_css( $stylesheet_uri, $stylesheet_dir_uri ) {
+	if ( file_exists( get_template_directory() . '/build/css/style.min.css' ) ) {
+		$stylesheet_uri = $stylesheet_dir_uri . '/build/css/style.min.css';
+	}
+	return $stylesheet_uri;
+}
+add_filter( 'stylesheet_uri', 'feistner_minified_css', 10, 2 );
+
+/**
  * Enqueue scripts and styles.
  */
 function feistner_scripts() {
+
 	wp_enqueue_style( 'feistner-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'big-sisters-font', 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700' );
+	wp_enqueue_style( 'font-awesome-cdn' , 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.4.0');
 
 	wp_enqueue_script( 'feistner-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

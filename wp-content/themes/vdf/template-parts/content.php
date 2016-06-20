@@ -10,6 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="content-wrapper">
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
@@ -44,4 +45,5 @@
 	<footer class="entry-footer">
 		<?php feistner_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+</div>
 </article><!-- #post-## -->
