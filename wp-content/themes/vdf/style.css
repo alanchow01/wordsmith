@@ -1,9 +1,9 @@
 /*!
-Theme Name: Wordsmith
+Theme Name: RED Starter Theme
 Theme URI: http://underscores.me/
-Author: Alan Chow
-Author URI: http://www.alanchow.ca
-Description: A WordPress theme for an author.
+Author: RED Academy
+Author URI: http://www.redacademy.com
+Description: A WordPress starter theme for RED Academy students.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -660,6 +660,33 @@ object {
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
+/* Globals */
+header {
+  background-size: cover;
+  padding: 20rem 0 0;
+  position: relative;
+  text-align: center;
+  margin-bottom: 6px;
+  height: 30rem;
+  width: 100%;
+  top: -18rem; }
+  header:before, header:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: skew(0deg, 12deg);
+    z-index: -999; }
+  header:before {
+    background: url("../../assets/background_header.jpg") center center;
+    left: 0;
+    transform: skew(0deg, 12deg); }
+  header:after {
+    background: url("../../assets/background_header.jpg") center right;
+    right: 0;
+    transform: skew(0deg, -12deg); }
+
 /* Front page */
 .content-wrapper {
   margin: 0 auto; }

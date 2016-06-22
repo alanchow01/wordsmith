@@ -1,7 +1,38 @@
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
-
+/* Globals */
+header {
+  background-size: cover;
+  padding: 20rem 0 0;
+  position: relative;
+  text-align: center;
+  margin-bottom: 6px;
+  height: 30rem;
+  width: 100%;
+  top: -18rem;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: skew(0deg, 12deg);
+    z-index: -999;
+  }
+  &:before {
+    background: url('../../assets/background_header.jpg') center center;
+    left: 0;
+    transform: skew(0deg, 12deg);
+  }
+  &:after {
+    background: url('../../assets/background_header.jpg') center right;
+    right: 0;
+    transform: skew(0deg, -12deg);
+  }
+}
+.site-branding {
+}
 /* Front page */
 .content-wrapper {
   margin: 0 auto;
