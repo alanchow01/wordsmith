@@ -2,44 +2,79 @@
 # Page Templates
 --------------------------------------------------------------*/
 /* Globals */
-header {
-  background-size: cover;
-  padding: 20rem 0 0;
-  position: relative;
+.site-header {
   text-align: center;
-  margin-bottom: 6px;
+  position: relative;
   height: 30rem;
-  width: 100%;
-  top: -18rem;
+  width: 100vw;
+  top: -10rem;
   &:before, &:after {
     content: '';
     position: absolute;
-    top: 0;
     height: 100%;
-    width: 50%;
-    transform: skew(0deg, 12deg);
-    z-index: -999;
+    width: 50.01%;
+    //z-index: -999;
+    top: 0;
   }
   &:before {
-    background: url('../../assets/background_header.jpg') center center;
+    background: url('../../assets/background_header_left.jpg') right top no-repeat;
+    background-size: cover;
     left: 0;
     transform: skew(0deg, 12deg);
   }
   &:after {
-    background: url('../../assets/background_header.jpg') center right;
+    background: url('../../assets/background_header_right.jpg') left top no-repeat;
+    background-size: cover;
     right: 0;
     transform: skew(0deg, -12deg);
   }
 }
+
 .site-branding {
-}
-/* Front page */
-.content-wrapper {
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 17rem;
+  z-index: 1;
+  img {
+    width: 100%;
+  }
 }
 
-.fp-posts {
-  background: rgba(0, 0, 0, .6);
-  margin-top: 3rem;
-  padding: 4rem 2rem;
+/* Front page */
+.section-img {
+  //transform: rotate(-5deg);
+  width: 100vw;
+  margin: 0 0;
+  //height: 10rem;
+  //position: absolute;
+}
+.sk-container {
+  //width: 100%;
+  overflow: hidden;
+  //padding-bottom: 115px;
+  border: 1px solid red;
+  position: relative;
+  //transform: rotate(5deg);
+clip-path: polygon(0 0, 100% 25%, 100% 75%, 0% 100%);
+  height: 50rem;
+}
+.sk {
+  margin: 0 0;
+  //transform-origin: left center;
+  &:nth-child(odd) {
+    //background: #3e3e3e url('../../assets/background_header_left.jpg') center center no-repeat;
+    //background-size: cover;
+    //transform: rotate(5deg);
+  }
+}
+
+
+.sk-content {
+  //transform: rotate(-5deg);
+  padding: 250px 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

@@ -103,7 +103,7 @@ a {
 
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
-		display: none;
+		//display: none;
 	}
 	.main-navigation ul {
 		display: block;
@@ -116,7 +116,7 @@ a {
 
 	.site-main & {
 		margin: 0 0 $base__space-unit;
-		overflow: hidden;
+		//overflow: hidden;
 	}
 
 	.nav-previous {
