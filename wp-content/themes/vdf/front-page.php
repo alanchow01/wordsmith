@@ -23,24 +23,33 @@ get_header(); ?>
 		?>
 		<?php if ( have_posts() ) : ?>
 			<?php foreach($all_stories as $post) : setup_postdata( $post ); ?>
-				<div class="sk-container">
-				<div class="sk">
-					<img class="section-img" src="<?php echo get_template_directory_uri() ?>/assets/background_header_left.jpg" />
-				</div>
-						<section class="sk-content">
-							<p><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
-							<p><?php the_content(); ?></p>
-							<p><?php the_content(); ?></p>
-							<p><?php the_content(); ?></p>
-							<p><?php the_content(); ?></p>
-						</section>
+				<!--<img class="section-img" src="<?php echo get_template_directory_uri() ?>/assets/background_header_left.jpg" />-->
+				<!--<section class="sk-container">
+				<div class="sk-content">
+				<p><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
+				<p><?php the_content(); ?></p>
 			</div>
-			<?php endforeach; wp_reset_postdata(); ?>
-		<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-		<?php endif; ?>
+		</section>
+	-->
+	<?php if (has_post_thumbnail( $post->ID ) ): ?>
+		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+		$image = $image[0]; ?>
+		<section class="post-section" style="background-image: url('<?php echo $image; ?>')" >
+			<p><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
+			<p><?php the_content(); ?></p>
+		</section>
+	<?php else : ?>
+		<section class="post-section">
+			<p><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
+			<p><?php the_content(); ?></p>
+		</section>
+	<?php endif; ?><!-- end #category-name -->
+<?php endforeach; wp_reset_postdata(); ?>
+<?php else : ?>
+	<?php get_template_part( 'template-parts/content', 'none' ); ?>
+<?php endif; ?>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 </div><!-- #primary -->
 
 <?php
