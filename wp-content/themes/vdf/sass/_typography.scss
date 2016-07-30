@@ -16,6 +16,8 @@ textarea {
 /* Headings */
 
 h1, h2, h3, h4, h5, h6 {
+	font-family: Arvo;
+	font-weight: 400;
 	clear: both;
 	margin: 0;
 }
@@ -66,4 +68,8 @@ mark, ins {
 
 big {
 	font-size: 125%;
+}
+
+.byline {
+	font-size: 1rem;
 }

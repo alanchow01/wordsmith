@@ -34,14 +34,23 @@ get_header(); ?>
 	<?php if (has_post_thumbnail( $post->ID ) ): ?>
 		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 		$image = $image[0]; ?>
-		<section class="post-section" style="background-image: url('<?php echo $image; ?>')" >
-			<p><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
-			<p><?php the_content(); ?></p>
+		<section class="post-section" style="background: url('<?php echo $image; ?>') center center; background-size: cover;" >
+			<div class="content-wrap">
+				<img class="book-covers" src="<?php echo CFS()->get('book_cover'); ?>" alt="" />
+			<div>
+				<a href="<?php the_permalink() ?>"><h2><?php the_title(); ?></h2>
+				<span class="byline"><?php echo CFS()->get('book_status'); ?></span></a>
+
+				<?php the_excerpt(); ?></div>
+		</div>
 		</section>
 	<?php else : ?>
 		<section class="post-section">
-			<p><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
-			<p><?php the_content(); ?></p>
+			<div class="content-wrap">
+				<img class="book-covers" src="<?php echo CFS()->get('book_cover'); ?>" alt="" />
+			<div><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></br/>
+			<?php the_content(); ?></div>
+		</div>
 		</section>
 	<?php endif; ?><!-- end #category-name -->
 <?php endforeach; wp_reset_postdata(); ?>

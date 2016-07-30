@@ -127,7 +127,9 @@ add_filter( 'stylesheet_uri', 'feistner_minified_css', 10, 2 );
 function feistner_scripts() {
 
 	wp_enqueue_style( 'feistner-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'big-sisters-font', 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700' );
+	wp_enqueue_style( 'feistner-body-font', 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700' );
+	wp_enqueue_style( 'feistner-headline-font', 'https://fonts.googleapis.com/css?family=Arvo:400,700' );
+
 	wp_enqueue_style( 'font-awesome-cdn' , 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.4.0');
 
 	wp_enqueue_script( 'feistner-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

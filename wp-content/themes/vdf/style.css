@@ -238,6 +238,8 @@ textarea {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
+  font-family: Arvo;
+  font-weight: 400;
   clear: both;
   margin: 0; }
 
@@ -280,6 +282,9 @@ mark, ins {
 
 big {
   font-size: 125%; }
+
+.byline {
+  font-size: 1rem; }
 
 /*--------------------------------------------------------------
 # Elements
@@ -696,69 +701,14 @@ object {
 
 /* Front page */
 .post-section {
-  background: #0000aa; }
+  background: #0000aa;
+  padding: 3rem 0; }
 
-.sk-container {
-  margin: 100px 0;
-  width: 100vw;
-  background: red; }
-  .sk-container:nth-child(odd) {
-    position: relative;
-    background: url("../../assets/background_header_left.jpg") center center no-repeat;
-    background-size: cover; }
-    .sk-container:nth-child(odd)::before {
-      background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22100%22%20width=%22100%25%22%20fill=%22rgb(255,0,0)%22%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,100%20100%25,100%20100%25,0%22%3E%3C/polygon%3E%3C/svg%3E");
-      background-position: center center;
-      background-repeat: no-repeat;
-      content: '';
-      height: 100px;
-      left: 0;
-      position: absolute;
-      right: 0;
-      width: 100%;
-      z-index: 1;
-      top: -100px; }
-  .sk-container:nth-child(even) {
-    position: relative; }
-    .sk-container:nth-child(even)::after {
-      background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20height=%22100%22%20width=%221200%22%20fill=%22rgb(255,255,0)%22%20fill-opacity=%221%22%3E%3Cpolygon%20points=%220,100%201200,100%200,0%22%3E%3C/polygon%3E%3C/svg%3E");
-      background-position: center center;
-      background-repeat: no-repeat;
-      content: '';
-      height: 100px;
-      left: 0;
-      position: absolute;
-      right: 0;
-      width: 100%;
-      z-index: 1;
-      bottom: -100px; }
-
-/*
-.sk-container {
-  overflow: hidden;
-  padding: 10px;
-  position: relative;
-  &:nth-child(odd){
-    background: #3e3e3e url('../../assets/background_header_left.jpg') center center no-repeat;
-    background-size: cover;
-    padding: 8rem 0;
-    //z-index: -99;
-  }
-  &:nth-child(2n+2){
-    border-top: 4rem solid transparent;
-    border-bottom: 4rem solid transparent;
-    border-left: 100vw solid #3e3e3e;
-    height: auto;
-    top: -4rem;
-    z-index: 99;
-  }
-  &:nth-child(n+3){
-    top: -8rem;
-  }
-}
-.sk-content {
-  z-index: 99;
-  //padding: 5rem 5rem;
-    left: 200px;
-}
-*/
+.content-wrap {
+  padding: 0 3rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around; }
+  .content-wrap .book-covers {
+    margin-right: 2rem; }
