@@ -16,7 +16,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+<style>
+.post-section:nth-child(odd) {
+-webkit-clip-path: url('#clip-shape-right');
+clip-path: url('#clip-shape-right');
+}
+.post-section:nth-child(even) {
+-webkit-clip-path: url('#clip-shape-left');
+clip-path: url('#clip-shape-left');
+}
+@media screen and (min-width: 800px) {
+	.post-section:nth-child(odd), .post-section:nth-child(even) {
+		-webkit-clip-path: none;
+		clip-path: none;
+	}
+}
+</style>
 <?php wp_head(); ?>
 </head>
 
@@ -30,7 +45,7 @@
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/assets/logo.svg" alt="Victoria Feistner"/></a></h1>
 			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/assets/logo.svg" alt="Victoria Feistner"/></a></h1>
 			<?php
 			endif;
 

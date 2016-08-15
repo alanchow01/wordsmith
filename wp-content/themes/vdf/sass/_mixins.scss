@@ -10,3 +10,16 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+// Responsive breakpoints
+@mixin desktop {
+	@media (min-width: $desktop_width) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: $tablet_width) {
+		@content;
+	}
+}

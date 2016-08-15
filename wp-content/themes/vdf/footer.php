@@ -14,7 +14,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		
+		&copy; 2016 Victoria Feistner.
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

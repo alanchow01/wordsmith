@@ -2,13 +2,6 @@
 /**
 * The main template file.
 *
-* This is the most generic template file in a WordPress theme
-* and one of the two required files for a theme (the other being style.css).
-* It is used to display a page when nothing more specific matches a query.
-* E.g., it puts together the home page when no home.php file exists.
-*
-* @link https://codex.wordpress.org/Template_Hierarchy
-*
 * @package Wordsmith
 */
 
@@ -18,48 +11,69 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 
 		<?php
+		$id = 4;
+		$post = get_post( $id );
+		$content = apply_filters('the_content', $post->post_content);
+		?>
+		<section class="post-section author-info">
+			<div class=" content-wrap write-up">
+			<h1><?php echo $post->post_title; ?></h1>
+			<?php echo $content; ?>
+		</div>
+		</section>
+
+		<?php
 		$args = array('post_type' => 'novels', 'posts_per_page' => -1);
 		$all_stories = get_posts( $args );
 		?>
+
 		<?php if ( have_posts() ) : ?>
 			<?php foreach($all_stories as $post) : setup_postdata( $post ); ?>
-				<!--<img class="section-img" src="<?php echo get_template_directory_uri() ?>/assets/background_header_left.jpg" />-->
-				<!--<section class="sk-container">
-				<div class="sk-content">
-				<p><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
-				<p><?php the_content(); ?></p>
+				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+
+				<section class="post-section" style="background: #227722 url('<?php echo $thumb[0];?>') no-repeat 0 50%; background-size: cover;">
+					<div class="content-books content-wrap">
+						<?php if ( CFS()->get('book_cover') ) : ?>
+							<div class="book-covers">
+							<img src="<?php echo CFS()->get('book_cover'); ?>" alt="" />
+						</div>
+							<!--<a class="book-covers" href="<?php the_permalink() ?>">
+							</a>-->
+						<?php endif; ?>
+						<div class="write-up">
+							<h2><?php the_title(); ?></h2>
+							<!--<a href="<?php the_permalink() ?>"></a>-->
+							<span class="byline">
+								<?php
+								$values = CFS()->get( 'book_status' );
+								foreach ( $values as $key => $label ) {
+									echo $label;
+								}
+								?></span>
+								<?php the_excerpt(); ?>
+							</div>
+						</div>
+
+					</section>
+				<?php endforeach; wp_reset_postdata(); ?>
+			<?php else : ?>
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+			<?php endif; ?>
+			<?php
+			$id = 38;
+			$post = get_post( $id );
+			$content = apply_filters('the_content', $post->post_content);
+			?>
+			<section class="post-section author-info">
+				<div class=" content-wrap write-up">
+				<h2><?php echo $post->post_title; ?></h2>
+				<?php echo $content; ?>
 			</div>
-		</section>
-	-->
-	<?php if (has_post_thumbnail( $post->ID ) ): ?>
-		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-		$image = $image[0]; ?>
-		<section class="post-section" style="background: url('<?php echo $image; ?>') center center; background-size: cover;" >
-			<div class="content-wrap">
-				<img class="book-covers" src="<?php echo CFS()->get('book_cover'); ?>" alt="" />
-			<div>
-				<a href="<?php the_permalink() ?>"><h2><?php the_title(); ?></h2>
-				<span class="byline"><?php echo CFS()->get('book_status'); ?></span></a>
+			</section>
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-				<?php the_excerpt(); ?></div>
-		</div>
-		</section>
-	<?php else : ?>
-		<section class="post-section">
-			<div class="content-wrap">
-				<img class="book-covers" src="<?php echo CFS()->get('book_cover'); ?>" alt="" />
-			<div><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></br/>
-			<?php the_content(); ?></div>
-		</div>
-		</section>
-	<?php endif; ?><!-- end #category-name -->
-<?php endforeach; wp_reset_postdata(); ?>
-<?php else : ?>
-	<?php get_template_part( 'template-parts/content', 'none' ); ?>
-<?php endif; ?>
+<?php include_once 'inc/svg-paths.php' ?>
 
-</main><!-- #main -->
-</div><!-- #primary -->
-
-<?php
-get_footer();
+	<?php
+	get_footer();
