@@ -21,7 +21,7 @@ get_header(); ?>
 				</div>
 			</section>
 		<?php else: ?>
-			<section class="post-section"style="background: #227722 url('<?php echo $row['section_image']?>') no-repeat 0 50%; background-size: cover;">
+			<section class="post-section" style="background: #227722 url('<?php echo $row['section_image']?>') no-repeat 0 50%; background-size: cover;">
 			</section>
 			<section class="post-section">
 				<div class="content-wrap author-info">
@@ -30,7 +30,7 @@ get_header(); ?>
 			</section>
 		<?php endif;?>
 	<?php endforeach; ?>
-	
+
 </main><!-- #main -->
 </div><!-- #primary -->
 

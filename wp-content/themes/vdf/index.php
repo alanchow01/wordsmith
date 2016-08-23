@@ -14,9 +14,10 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+<h1>index.php</h1>
+	<div id="primary" class="content-area flex">
 		<main id="main" class="site-main" role="main">
-
+			<div class="post-list flex">
 		<?php
 		if ( have_posts() ) :
 
@@ -36,8 +37,13 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				 ?>
+				 <div class="posts">
+					 <?php get_template_part( 'template-parts/content'); ?>
 
+				<?php //get_template_part( 'template-parts/content', get_post_format() ); ?>
+				</div>
+				<?php
 			endwhile;
 
 			the_posts_navigation();
@@ -47,7 +53,7 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-
+	</div><!--post-list-->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

@@ -9,35 +9,34 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 	<div class="content-wrap">
+
 	<header class="entry-header">
+		<?php if ( has_post_thumbnail() ) : ?>
+			<?php $backgroundImg = the_post_thumbnail( 'large' ); ?>
+			<div style="background: url('<?php echo $backgroundImg; ?>'); height: 100px;" >
+		<?php endif; ?>
+
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
+		<div class="entry-meta">
+			<?php feistner_posted_on(); ?>
+		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php the_content(); ?>
 		<?php
-			the_content();
-
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'feistner' ),
+				'before' => '<div class="page-links">' . esc_html( 'Pages:' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'feistner' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
+		<?php feistner_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </div>
 </article><!-- #post-## -->

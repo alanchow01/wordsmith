@@ -3,16 +3,91 @@
 --------------------------------------------------------------*/
 
 /* Globals */
+.flex {
+  display: flex;
+}
+.widget-area {
+  max-width: 1200px;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  .widget {
+    flex:1 0 33.3%;
+    padding-right: 1rem;
+  }
+}
 .site-content {
   position: relative;
   top: -5rem;
+  @include tablet {
+    top: -9rem;
+  }
 }
 .content-wrap {
-  max-width: 1200px;
   padding: 0 1rem;
+  text-align: left;
   @include tablet {
     max-width: 600px;
+  }
 }
+.blog{
+  .content-area {
+    @include tablet {
+      max-width: 1200px;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+  }
+  .site-main {
+  }
+  .widget-area {
+    width: 100%;
+    display: flex;
+    margin-top: 10rem;
+    padding: 0 2rem;
+    text-align: left;
+  }
+  .post-content {
+    text-align: left;
+    color: #ffffff;
+    a:link, a:visited {
+      color: green;
+    }
+    @include tablet {
+      padding: 5rem 2rem;
+    }
+  }
+  .post-background {
+    background: #002200;
+    //min-height: 300px;
+    @include tablet {
+      align-items: center;
+    }
+  }
+  .post-list {
+    @include tablet {
+      flex-flow: row wrap;
+      justify-content: space-around;
+    }
+  }
+  .posts {
+    @include tablet {
+      flex: 0 1 50%;
+      padding: 0 0.75rem;
+      &:nth-child(odd) {
+      transform: skewY(-12deg);
+      .post-content {
+        transform: skewY(12deg);
+      }
+    }
+    &:nth-child(even) {
+    transform: skewY(12deg);
+    .post-content {
+      transform: skewY(-12deg);
+      }
+    }
+  }
+}
+
 }
 .site-header {
   text-align: center;
@@ -31,13 +106,13 @@
     background: url('../../assets/background_header_left.jpg') right top no-repeat;
     background-size: cover;
     left: 0;
-    transform: skew(0deg, 13deg);
+    transform: skew(0deg, 12deg);
   }
   &:after {
     background: url('../../assets/background_header_right.jpg') left top no-repeat;
     background-size: cover;
     right: 0;
-    transform: skew(0deg, -13deg);
+    transform: skew(0deg, -12deg);
   }
 }
 
@@ -59,6 +134,8 @@
 /* Front page */
 
 .site-main{
+  text-align: center;
+  margin: 0 auto;
   @include tablet {
     display: flex;
     align-content: space-between;
@@ -126,6 +203,7 @@
 }
 
 .write-up {
+  text-align: left;
   flex: 70% 1 0;
 }
 .book-covers {
@@ -141,7 +219,6 @@
     text-align: center;
   }
 }
-
 // About
 
 .avatar {

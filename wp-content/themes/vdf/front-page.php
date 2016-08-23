@@ -11,7 +11,7 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 
 		<?php
-		$id = 4;
+		$id = 58;
 		$post = get_post( $id );
 		$content = apply_filters('the_content', $post->post_content);
 		?>
@@ -31,7 +31,7 @@ get_header(); ?>
 			<?php foreach($all_stories as $post) : setup_postdata( $post ); ?>
 				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
 
-				<section class="post-section" style="background: #227722 url('<?php echo $thumb[0];?>') no-repeat 0 50%; background-size: cover;">
+				<section class="post-section" style="background: linear-gradient(rgba(0,0,0,0.8)0%,rgba(0,0,0,0)100%), url('<?php echo $thumb[0];?>') no-repeat 0 50%; background-size: cover, cover;">
 					<div class="content-books content-wrap">
 						<?php if ( CFS()->get('book_cover') ) : ?>
 							<div class="book-covers">
@@ -60,7 +60,7 @@ get_header(); ?>
 				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 			<?php endif; ?>
 			<?php
-			$id = 38;
+			$id = 56;
 			$post = get_post( $id );
 			$content = apply_filters('the_content', $post->post_content);
 			?>
