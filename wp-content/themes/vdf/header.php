@@ -17,16 +17,17 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<style>
-	.post-section:nth-child(odd) {
+	.post-section:nth-child(odd), .posts:nth-child(odd) {
 		-webkit-clip-path: url('#clip-shape-right');
 		clip-path: url('#clip-shape-right');
 	}
-	.post-section:nth-child(even) {
+	.post-section:nth-child(even), .posts:nth-child(even) {
 		-webkit-clip-path: url('#clip-shape-left');
 		clip-path: url('#clip-shape-left');
 	}
 	@media screen and (min-width: 800px) {
-		.post-section:nth-child(odd), .post-section:nth-child(even) {
+		.post-section:nth-child(odd), .post-section:nth-child(even),
+		.posts:nth-child(odd), .posts:nth-child(even) {
 			-webkit-clip-path: none;
 			clip-path: none;
 		}

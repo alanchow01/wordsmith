@@ -23,3 +23,21 @@
 		@content;
 	}
 }
+
+// form styles
+@mixin form-button {
+	background-color: #00A58A;
+	border: 0;
+	box-shadow: none;
+	color: #fff;
+  font-size: 1rem;
+	padding: .75rem 1.5rem;
+  text-decoration: none;
+  &:hover {
+		background-color: #008b76;
+    color: #fff;
+  }
+  &:visited {
+    color: #fff;
+  }
+}

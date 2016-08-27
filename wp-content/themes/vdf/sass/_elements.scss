@@ -22,7 +22,14 @@ body {
 
 blockquote, q {
 	quotes: "" "";
-
+	border-left: 5px solid #008b76;
+	padding-left: 1rem;
+	margin: 2rem auto;
+	font-style: italic;
+	width:85%;
+	@include tablet {
+	@include font-size(1.25);
+}
 	&:before,
 	&:after {
 		content: "";
@@ -46,6 +53,10 @@ ul {
 
 ol {
 	list-style: decimal;
+}
+
+li {
+	margin-left: ($base__space-unit * -2.5);
 }
 
 li > ul,

@@ -6,20 +6,11 @@
 .flex {
   display: flex;
 }
-.widget-area {
-  max-width: 1200px;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  .widget {
-    flex:1 0 33.3%;
-    padding-right: 1rem;
-  }
-}
 .site-content {
   position: relative;
-  top: -5rem;
+  margin-top: -5rem;
   @include tablet {
-    top: -9rem;
+    margin-top: -8rem;
   }
 }
 .content-wrap {
@@ -34,67 +25,70 @@
     @include tablet {
       max-width: 1200px;
       justify-content: space-between;
-      margin: 0 auto;
+      margin: 10rem auto 0;
     }
-  }
-  .site-main {
-  }
-  .widget-area {
-    width: 100%;
-    display: flex;
-    margin-top: 10rem;
-    padding: 0 2rem;
-    text-align: left;
   }
   .post-content {
     text-align: left;
-    color: #ffffff;
-    a:link, a:visited {
-      color: green;
-    }
+    color: #000;
+    align-self: center;
+    padding: 0 1rem;
     @include tablet {
-      padding: 5rem 2rem;
+      width: 100%;
+      a:link, a:visited {
+        color: green;
+      }
     }
   }
   .post-background {
-    background: #002200;
-    //min-height: 300px;
+    background: rgba(109, 132, 71, .5);
+    min-height: 425px;
     @include tablet {
-      align-items: center;
+      //align-items: center;
     }
   }
   .post-list {
+    flex-flow: column;
     @include tablet {
       flex-flow: row wrap;
       justify-content: space-around;
     }
   }
   .posts {
+    margin-bottom: -5rem;
+    &:last-child {
+      margin-bottom: 5rem;
+    }
     @include tablet {
       flex: 0 1 50%;
       padding: 0 0.75rem;
       &:nth-child(odd) {
-      transform: skewY(-12deg);
-      .post-content {
-        transform: skewY(12deg);
+        transform: skewY(-12deg);
+        .post-content {
+          transform: skewY(12deg);
+          padding: 4rem 1rem;
+        }
       }
-    }
-    &:nth-child(even) {
-    transform: skewY(12deg);
-    .post-content {
-      transform: skewY(-12deg);
+      &:nth-child(even) {
+        transform: skewY(12deg);
+        .post-content {
+          transform: skewY(-12deg);
+          padding: 4rem 1rem;
+        }
       }
     }
   }
-}
-
+  .post {
+    width: 100%;
+  }
 }
 .site-header {
   text-align: center;
   position: relative;
-  height: 30rem;
+  height: 20rem;
   width: 100vw;
-  top: -10rem;
+  margin-top: -4rem;
+  margin-bottom: 7rem;
   &:before, &:after {
     content: '';
     position: absolute;
@@ -114,20 +108,28 @@
     right: 0;
     transform: skew(0deg, -12deg);
   }
+  @include tablet {
+    margin-top: -6rem;
+  }
 }
 
 .site-branding {
   display: flex;
   align-items: center;
   flex-direction: column;
-  position: relative;
-  top: 50%;
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 8rem;
   z-index: 1;
   img {
-    width: 100%;
+    width: 75%;
+    @include tablet {
+      width: 100%;
+    }
   }
   @include tablet {
-    top: 60%;
+    padding-top: 9rem;
   }
 }
 
@@ -148,14 +150,13 @@
   color: #fff;
   padding: 0 2rem 0 0;
   min-height: 35rem;
-  margin: -5.25rem 0;
+  margin-top: -5.25rem;
   display: flex;
   align-items: center;
   @include tablet {
-    //padding: 2rem 2rem 2rem 0;
+    padding: 6rem 2rem 6rem 0;
     margin: 1rem 0;
     min-height: 25rem;
-    justify-content: flex-end;
   }
   &:nth-child(odd) {
     @include tablet {
@@ -191,20 +192,20 @@
   }
 }
 
-.clip-wrap {
-  text-align: center;
-}
-
 .content-books {
   display: flex;
-  align-items: center;
   margin: 0 auto;
   text-align: left;
+  align-items: center;
+  @include tablet {
+    align-items: flex-start;
+  }
 }
 
 .write-up {
   text-align: left;
   flex: 70% 1 0;
+  margin: 0 auto;
 }
 .book-covers {
   flex: 30% 1 0;
@@ -221,7 +222,7 @@
 }
 // About
 
-.avatar {
+.vic-avatar {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
@@ -232,15 +233,167 @@
   float:left;
   width: 50%;
 }
+
+// single blog post
+.single-post {
+  .entry-header {
+    position: relative;
+    margin-top: -17rem;
+    @include tablet {
+      margin-top: -8rem;
+    }
+  }
+  .post-credits {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .entry-title, .entry-meta {
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    padding-top: 1rem;
+  }
+  .entry-meta {
+    padding-bottom: 1rem;
+    & a:link, & a:visited {
+      color: #fff;
+    }
+  }
+  .entry-content {
+    text-align: left;
+    color: #000;
+    margin: 4rem auto 0;
+    padding: 0 1rem;
+    @include desktop {
+      max-width: 1200px;
+    }
+  }
+  .site-main, .type-post, .post-pict {
+    width: 100%;
+    .post-pict, .no-post-image {
+      z-index: -1;
+      overflow: hidden;
+      position: relative;
+      height: 45rem;
+      @include tablet {
+        height: 45rem;
+      }
+    }
+    .no-post-image {
+      background: url(../../assets/default_img.jpg);
+    }
+  }
+  .comments-area {
+    color: #000;
+
+    @include tablet {
+      border-top: 1px solid white;
+      padding: 3rem 1rem 10rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+    }
+  }
+}
+
+//
+
+.comment-column {
+  flex: 0 1 65%;
+  padding-right: 1rem;
+}
+.comment-respond {
+  flex: 0 1 35%;
+  padding-left: 1rem;
+}
+.comment-list {
+  margin-bottom: 1.5rem;
+  list-style: none;
+}
+.comment {
+  border-bottom: 1px dashed #000000;
+  padding: 1.5rem 0 1.5rem;
+}
+.reply {
+  display: none;
+  visibility: hidden;
+}
+.comments-title, .comment-reply-title {
+  @include font-size(1.75);
+}
+.comment-author .avatar {
+  border-radius: 50%;
+  border: 2px solid #fff;
+  width: 75%;
+  margin-left: 1rem;
+}
+.comment-body {
+  display: flex;
+}
+.comment-content {
+  margin-left: 2rem;
+  flex: 0 1 80%;
+}
+.comment-meta {
+  flex: 0 1 20%;
+  @include font-size(0.9);
+}
+
+//
+
 // Footer
 
 .site-footer {
   background-color: #008b76;
-  height: 3rem;
-  line-height: 0;
-  padding: 3rem 0;
+  margin-top: 6rem;
   text-align: center;
   width: 100%;
+  padding: 2rem 0;
+}
+.blog, .single-post {
+  .site-footer {
+    height: 20rem;
+    position: relative;
+    margin-top: -10rem;
+    z-index: -99;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
+
+.widget-area {
+  position: relative;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: #00a58a;
+    z-index: -1;
+  }
+  &:before {
+    left: 0;
+    transform: skew(0deg, 12deg);
+  }
+  &:after {
+    right: 0;
+    transform: skew(0deg, -12deg);
+  }
+}
+.widget-container {
+  padding: 5rem 1rem 0;
+  width: 100%;
+  flex-flow: column;
+  @include tablet {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .widget {
+    flex: 0 1 33.3%;
+    padding: 0 .5rem;
+  }
 }
 
 #responsive-menu {
