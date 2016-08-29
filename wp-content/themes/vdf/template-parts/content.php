@@ -10,7 +10,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="content-wrapper">
 		<div class="post-background flex">
 			<div class="post-content">
 				<header class="entry-header">
@@ -33,6 +32,5 @@
 				<?php the_excerpt(); ?>
 			</div><!-- post-content-->
 		</div>
-	</div>
 
 </article><!-- #post-## -->
