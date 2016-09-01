@@ -11,7 +11,7 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 
 		<?php
-		$id = 58;
+		$id = 111;
 		$post = get_post( $id );
 		$content = apply_filters('the_content', $post->post_content);
 		?>
@@ -50,7 +50,8 @@ get_header(); ?>
 								echo $label;
 							}
 							?></span>
-							<?php the_excerpt(); ?>
+							<?php //the_excerpt(); ?>
+							<?php the_content(); ?>
 						</div>
 					</div>
 
@@ -60,7 +61,7 @@ get_header(); ?>
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 		<?php endif; ?>
 		<?php
-		$id = 56;
+		$id = 113;
 		$post = get_post( $id );
 		$content = apply_filters('the_content', $post->post_content);
 		?>

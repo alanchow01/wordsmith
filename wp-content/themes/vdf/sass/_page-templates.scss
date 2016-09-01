@@ -43,9 +43,6 @@
       align-self: flex-start;
       width: 100%;
       padding: 6rem 3rem;
-      a:link, a:visited {
-        color: green;
-      }
     }
   }
   .post-background {
@@ -54,6 +51,8 @@
   .post-list {
     flex-flow: column;
     @include tablet {
+      width: 100%;
+      text-align: center;
       flex-flow: row wrap;
       justify-content: justify;
     }
@@ -98,8 +97,23 @@
     @include tablet {
       width: 100%;
       max-width: 600px;
+    }
   }
-  }
+}
+.posts-navigation {
+  padding: 7rem 0;
+  margin-bottom: -5rem;
+  z-index: 99;
+  width: 100%;
+@include tablet {
+  padding: 4rem 0 0;
+  margin-bottom: -0rem;
+}
+  @include desktop {
+  max-width: 1200px;
+  margin: 0 auto -2rem;
+  padding: 7rem 0 0;
+}
 }
 .site-header {
   text-align: center;
@@ -166,11 +180,11 @@
 }
 .post-img-wrap {
   @include tablet {
-  transform: skewY(12deg);
-  width: 100%;
-  height: 200%;
-  position: absolute;
-}
+    transform: skewY(12deg);
+    width: 100%;
+    height: 200%;
+    position: absolute;
+  }
 }
 .post-section {
   background: #aed475;
@@ -181,7 +195,7 @@
   display: flex;
   align-items: center;
   @include tablet {
-    padding: 6rem 0rem 6rem 0;
+    padding: 6rem 3rem 6rem 1rem;
     margin: 1rem 0;
     min-height: 25rem;
     overflow: hidden;
@@ -260,18 +274,21 @@
 }
 .about-content {
   float:left;
-  width: 75%;
+  width: 70%;
 }
 .page-template-about {
   .post-section {
     display: flex;
     &:nth-child(odd) {
-    justify-content: flex-end;
+      justify-content: flex-end;
+    }
+    @include tablet {
+      padding: 0 2rem 0 0;
+    }
   }
-}
-.author-info h2 {
-  text-align: left;
-}
+  .author-info h2 {
+    text-align: left;
+  }
 }
 
 // single blog post
@@ -424,6 +441,12 @@
 }
 
 .widget-area {
+  a:link, a:visited {
+    color: #000;
+  }
+  a:hover, a:active {
+    color: #fff;
+  }
   position: relative;
   &:before, &:after {
     content: '';
@@ -446,14 +469,23 @@
 .widget-container {
   padding: 5rem 1rem 0;
   width: 100%;
-  flex-flow: column;
+  flex-flow: row wrap;
   @include tablet {
+    justify-content: center;
     flex-flow: row wrap;
     justify-content: space-between;
   }
+  @include desktop {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
   .widget {
+    flex: 0 50%;
+    @include tablet {
     flex: 0 1 33.3%;
     padding: 0 .5rem;
+  }
   }
 }
 

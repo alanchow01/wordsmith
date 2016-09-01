@@ -480,11 +480,11 @@ fieldset {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: #000; }
+  color: #008B76; }
   a:visited {
-    color: #000; }
+    color: #008B76; }
   a:hover, a:focus, a:active {
-    color: #24d9ff; }
+    color: #01b799; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -536,18 +536,15 @@ a {
     display: block; } }
 
 .site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
 .post-navigation {
   margin: 0 0 1.5em; }
 
 .comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
   width: 50%; }
 
 .comment-navigation .nav-next,
-.posts-navigation .nav-next,
 .post-navigation .nav-next {
   float: right;
   text-align: right;
@@ -775,9 +772,7 @@ object {
           -ms-flex-item-align: start;
               align-self: flex-start;
       width: 100%;
-      padding: 6rem 3rem; }
-      .blog .post-content a:link, .blog .post-content a:visited {
-        color: green; } }
+      padding: 6rem 3rem; } }
 
 .blog .post-background {
   min-height: 525px; }
@@ -788,6 +783,8 @@ object {
           flex-flow: column; }
   @media (min-width: 800px) {
     .blog .post-list {
+      width: 100%;
+      text-align: center;
       -webkit-flex-flow: row wrap;
           -ms-flex-flow: row wrap;
               flex-flow: row wrap;
@@ -845,6 +842,21 @@ object {
   .blog .post {
     width: 100%;
     max-width: 600px; } }
+
+.posts-navigation {
+  padding: 7rem 0;
+  margin-bottom: -5rem;
+  z-index: 99;
+  width: 100%; }
+  @media (min-width: 800px) {
+    .posts-navigation {
+      padding: 4rem 0 0;
+      margin-bottom: -0rem; } }
+  @media (min-width: 1200px) {
+    .posts-navigation {
+      max-width: 1200px;
+      margin: 0 auto -2rem;
+      padding: 7rem 0 0; } }
 
 .site-header {
   text-align: center;
@@ -941,7 +953,7 @@ object {
           align-items: center; }
   @media (min-width: 800px) {
     .post-section {
-      padding: 6rem 0rem 6rem 0;
+      padding: 6rem 3rem 6rem 1rem;
       margin: 1rem 0;
       min-height: 25rem;
       overflow: hidden;
@@ -1030,7 +1042,7 @@ object {
 
 .about-content {
   float: left;
-  width: 75%; }
+  width: 70%; }
 
 .page-template-about .post-section {
   display: -webkit-flex;
@@ -1040,6 +1052,9 @@ object {
     -webkit-justify-content: flex-end;
         -ms-flex-pack: end;
             justify-content: flex-end; }
+  @media (min-width: 800px) {
+    .page-template-about .post-section {
+      padding: 0 2rem 0 0; } }
 
 .page-template-about .author-info h2 {
   text-align: left; }
@@ -1193,6 +1208,10 @@ object {
 
 .widget-area {
   position: relative; }
+  .widget-area a:link, .widget-area a:visited {
+    color: #000; }
+  .widget-area a:hover, .widget-area a:active {
+    color: #fff; }
   .widget-area:before, .widget-area:after {
     content: '';
     position: absolute;
@@ -1215,22 +1234,35 @@ object {
 .widget-container {
   padding: 5rem 1rem 0;
   width: 100%;
-  -webkit-flex-flow: column;
-      -ms-flex-flow: column;
-          flex-flow: column; }
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap; }
   @media (min-width: 800px) {
     .widget-container {
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
       -webkit-flex-flow: row wrap;
           -ms-flex-flow: row wrap;
               flex-flow: row wrap;
       -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
               justify-content: space-between; } }
+  @media (min-width: 1200px) {
+    .widget-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto; } }
   .widget-container .widget {
-    -webkit-flex: 0 1 33.3%;
-        -ms-flex: 0 1 33.3%;
-            flex: 0 1 33.3%;
-    padding: 0 .5rem; }
+    -webkit-flex: 0 50%;
+        -ms-flex: 0 50%;
+            flex: 0 50%; }
+    @media (min-width: 800px) {
+      .widget-container .widget {
+        -webkit-flex: 0 1 33.3%;
+            -ms-flex: 0 1 33.3%;
+                flex: 0 1 33.3%;
+        padding: 0 .5rem; } }
 
 #responsive-menu {
   margin-top: 6rem !important; }

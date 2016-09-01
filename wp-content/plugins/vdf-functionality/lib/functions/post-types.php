@@ -40,7 +40,7 @@ function novels() {
 		'label'                 => __( 'novel', 'text_domain' ),
 		'description'           => __( 'List of published work', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', ),
+		'supports'              => array( 'title', 'editor', 'author', 'thumbnail', ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,

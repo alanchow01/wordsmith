@@ -28,6 +28,21 @@ function feistner_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'feistner_body_classes' );
 
+// replace login logo
+function feistner_login () {
+    echo '<style type="text/css">
+						h1 a {
+						background-image:url('. get_template_directory_uri() .'/assets/logo_green.svg) !important;
+						background-size:contain !important;
+						width: 100% !important;}
+					</style>';
+}
+add_action( 'login_head', 'feistner_login' );
+function feistner_url () {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'feistner_url' );
+
 // Show blog excerpt
 function feistner_wp_trim_excerpt( $text ) {
     $raw_excerpt = $text;
