@@ -7,32 +7,57 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area tab">
 	<main id="main" class="site-main" role="main">
+<?php
+$loop = CFS()->get('about_sections');
+foreach($loop as $row) : ?>
+					<?php
+					$values = $row['image_placement']; ?>
+					<?php foreach($values as $key=>$position): ?>
+						<?php if ($position === 'Right'): ?>
+							<section class="post-section content-first">
+								<div class="content-wrap general-info">
+									<?php echo $row['content']; ?>
+								</div>
+							</section>
+							<section class="post-section img-sec">
+								<div class="post-img-wrap skew-left" style="background: #227722 url('<?php echo $row['section_image']?>') no-repeat 0 50%; background-size: cover;">
+								</div>
+							</section>
 
+						<?php else: ?>
+
+						<section class="post-section img-first">
+							<div class="post-img-wrap skew-right" style="background: #227722 url('<?php echo $row['section_image']?>') no-repeat 0 50%; background-size: cover;">
+							</div>
+						</section>
+							<section class="post-section content-sec">
+								<div class="content-wrap general-info">
+									<?php echo $row['content']; ?>
+								</div>
+							</section>
+						<?php endif; ?>
+					<?php endforeach; ?>
+<?php endforeach; ?>
+</main>
+</div>
+
+<div id="primary" class="content-area mobile">
+	<main id="main" class="site-main" role="main">
 		<?php
-		//$upload_path = content_url() . '/uploads/';
 		$loop = CFS()->get('about_sections');
 		foreach($loop as $row) : ?>
-		<?php if ( !$row['section_image'] ): ?>
-			<section class="post-section">
-				<div class="content-wrap author-info">
-					<?php echo $row['content'];?>
-				</div>
-			</section>
-		<?php else: ?>
-				<section class="post-section" style="background: #227722 url('<?php echo $row['section_image']?>') no-repeat 0 50%; background-size: cover;">
+				<section class="post-section">
 					<div class="post-img-wrap" style="background: #227722 url('<?php echo $row['section_image']?>') no-repeat 0 50%; background-size: cover;">
 					</div>
 				</section>
 			<section class="post-section">
-				<div class="content-wrap author-info">
+				<div class="content-wrap general-info">
 					<?php echo $row['content'];?>
 				</div>
 			</section>
-		<?php endif;?>
 	<?php endforeach; ?>
-
 </main><!-- #main -->
 </div><!-- #primary -->
 

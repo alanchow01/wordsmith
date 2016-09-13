@@ -17,15 +17,13 @@ get_header(); ?>
 <div id="primary" class="content-area flex">
 	<main id="main" class="site-main" role="main">
 
-		<div class="post-list flex">
 			<?php
 			if ( have_posts() ) :
 
 				if ( is_home() && ! is_front_page() ) : ?>
-				<header>
+				<!-- <header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-
+				</header> -->
 				<?php
 			endif;
 
@@ -38,8 +36,10 @@ get_header(); ?>
 			* called content-___.php (where ___ is the Post Format name) and that will be used instead.
 			*/
 			?>
-			<section class="posts">
+			<section class="posts post-section">
+				<div class="content-wrap general-info">
 				<?php get_template_part( 'template-parts/content'); ?>
+			</div>
 			</section>
 			<?php
 		endwhile;
@@ -51,7 +51,6 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-	</div><!--post-list-->
 </main><!-- #main -->
 </div><!-- #primary -->
 <?php include_once 'inc/svg-paths.php' ?>

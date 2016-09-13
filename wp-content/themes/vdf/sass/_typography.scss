@@ -11,6 +11,9 @@ textarea {
 	font-family: $font__main;
 	@include font-size(1);
 	line-height: $font__line-height-body;
+	@include tablet {
+		@include font-size(0.9);
+	}
 }
 
 /* Headings */

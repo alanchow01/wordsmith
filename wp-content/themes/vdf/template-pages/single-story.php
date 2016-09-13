@@ -1,7 +1,7 @@
 <?php
 /**
- * The template for displaying all single posts.
- *
+ * The template for displaying short stories.
+ * Template Name: Story Template
  * @package Wordsmith
  */
 
@@ -10,7 +10,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
+			<?php get_template_part( 'template-parts/content', 'story' ); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template.

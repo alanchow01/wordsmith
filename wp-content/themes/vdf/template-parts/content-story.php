@@ -1,6 +1,6 @@
 <?php
 /**
-* Template part for displaying page content in page.php.
+* Template part for displaying page content in single-story.php.
 *
 * @link https://codex.wordpress.org/Template_Hierarchy
 *
@@ -41,9 +41,6 @@
 				) );
 				?>
 			</div><!-- .entry-content -->
-			<div class="blog-sidebar">
-				<?php dynamic_sidebar( 'sidebar-2' ); ?>
-			</div>
 			<footer class="entry-footer">
 				<?php feistner_entry_footer(); ?>
 			</footer><!-- .entry-footer -->

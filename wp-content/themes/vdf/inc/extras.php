@@ -57,7 +57,7 @@ function feistner_wp_trim_excerpt( $text ) {
         $allowed_tags = '<p>,<a>,<em>,<strong>,<blockquote>,<cite>';
         $text = strip_tags( $text, $allowed_tags );
         // change to desired word count
-        $excerpt_word_count = 50;
+        $excerpt_word_count = 25;
         $excerpt_length = apply_filters( 'excerpt_length', $excerpt_word_count );
         // create a custom "more" link
         $excerpt_end = '<span>[...]</span><p><a href="' . get_permalink() . '" class="read-more">Read more &rarr;</a></p>'; // modify excerpt ending
