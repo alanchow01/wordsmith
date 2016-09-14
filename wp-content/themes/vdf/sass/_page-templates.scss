@@ -65,12 +65,12 @@
   }
 }
 .site-main {
+  width:100%;
   @include tablet {
     margin: 0rem auto 0;
     display: flex;
     align-content: space-between;
     flex-flow: row wrap;
-    width: 100%;
   }
 }
 /* Front page */
@@ -140,7 +140,7 @@
   padding: 5rem 2rem;
   align-items: center;
   @include tablet {
-    width: 450px;
+    width: 100%;
     min-height: auto;
   }
 }
@@ -248,7 +248,7 @@
 }
 
 // single blog post
-.single-post, .page-template-single-story {
+.single-post, .single-story {
   .entry-header {
     position: relative;
     margin-top: -17rem;
@@ -281,10 +281,10 @@
     margin: 0 auto;
     padding-bottom: 2rem;
     display: flex;
-    @include desktop {
+    @include tablet {
       width: 100%;
       line-height: 1.5rem;
-    max-width: 900px;
+      max-width: 900px;
       padding: 0 2rem 2rem;
     }
   }
@@ -306,7 +306,7 @@
       margin-top: 2.5rem;
     }
   }
-  .site-main, .type-post, .post-pict {
+  .site-main, .type-post, .post-pict, .type-story {
     width: 100%;
     .post-pict, .no-post-image {
       z-index: -1;
@@ -323,8 +323,26 @@
   }
 }
 
-//
+// Single story
+.single-story {
+  .blog-post-wrapper {
+    width: 100%;
+    display: block;
+  }
+  .entry-content {
+    @include tablet {
+      margin: 0;
+      padding-top: 1rem;
+    }
+  }
+}
+.single-story, .post-type-archive-story, .error404 {
+  .widget-container section {
+    visibility: hidden;
+  }
+}
 
+// Comments Section
 .comments-area {
   border-top: 1px solid white;
   color: #000;
@@ -401,6 +419,19 @@
 
 //
 
+// Error 404
+.error-404 {
+  color: #000;
+  margin: 0 auto 7rem;
+  padding: 0 1rem;
+  width: 100%;
+  @include tablet {
+    margin-top: 7rem;
+    max-width: 900px;
+    padding: 0 2rem;
+  }
+}
+
 // Footer
 
 .site-footer {
@@ -413,7 +444,7 @@
     width: 100%;
   }
 }
-.blog, .single-post, .page-template-single-story {
+.blog, .single-post, .category, .single-story, .error404 {
   .site-footer {
     height: 20rem;
     position: relative;
@@ -427,6 +458,7 @@
 
 // footer widget area
 .widget-area {
+  z-index: 99;
   a:link, a:visited {
     color: #000;
   }
@@ -463,14 +495,12 @@
     }
   }
   @include tablet {
-    justify-content: center;
-    flex-flow: row wrap;
-    justify-content: space-between;
-  }
-  @include desktop {
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
+    justify-content: center;
+    flex-flow: row wrap;
+    justify-content: space-between;
   }
   .widget {
     flex: 0 1 50%;

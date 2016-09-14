@@ -1,9 +1,9 @@
 <?php
 /**
-* The template for displaying archive pages.
+* The template for displaying story archive pages.
 *
 * @link https://codex.wordpress.org/Template_Hierarchy
-*
+* Template Name: Stories Archive
 * @package Wordsmith
 */
 
@@ -11,7 +11,15 @@ get_header(); ?>
 
 <div id="primary" class="content-area flex">
 	<main id="main" class="site-main" role="main">
-
+		<section class="posts post-section">
+			<div class="content-wrap general-info">
+				<?php
+				$id = 159;
+				$post = get_post( $id );
+				$content = apply_filters('the_content', $post->post_content);
+				echo $content; ?>
+			</div>
+		</section>
 		<?php
 		if ( have_posts() ) : ?>
 
@@ -40,6 +48,7 @@ get_header(); ?>
 	endif; ?>
 </main><!-- #main -->
 </div><!-- #primary -->
+<?php include_once 'inc/svg-paths.php' ?>
 
-<?php get_sidebar();?>
+<?php //get_sidebar();?>
 <?php get_footer(); ?>

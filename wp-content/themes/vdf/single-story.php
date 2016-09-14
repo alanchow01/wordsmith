@@ -1,7 +1,7 @@
 <?php
 /**
- * The template for displaying short stories.
- * Template Name: Story Template
+ * The template for displaying all single posts.
+ *
  * @package Wordsmith
  */
 
