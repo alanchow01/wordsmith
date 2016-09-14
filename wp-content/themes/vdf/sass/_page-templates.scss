@@ -326,8 +326,10 @@
 // Single story
 .single-story {
   .blog-post-wrapper {
+    background: #fff;
     width: 100%;
     display: block;
+    line-height: 1.75rem;
   }
   .entry-content {
     @include tablet {

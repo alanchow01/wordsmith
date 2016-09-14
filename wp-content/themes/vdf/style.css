@@ -1069,8 +1069,10 @@ object {
     background: url(../../assets/default_img.jpg); }
 
 .single-story .blog-post-wrapper {
+  background: #fff;
   width: 100%;
-  display: block; }
+  display: block;
+  line-height: 1.75rem; }
 
 @media (min-width: 800px) {
   .single-story .entry-content {
