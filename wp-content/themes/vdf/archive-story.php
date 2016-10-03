@@ -20,6 +20,7 @@ get_header(); ?>
 				echo $content; ?>
 			</div>
 		</section>
+
 		<?php
 		if ( have_posts() ) : ?>
 
@@ -27,14 +28,18 @@ get_header(); ?>
 		/* Start the Loop */
 		while ( have_posts() ) : the_post(); ?>
 		<section class="posts post-section">
-			<div class="content-wrap general-info">
-
-				<?php /*
-				* Include the Post-Format-specific template for the content.
-				* If you want to override this in a child theme, then include a file
-				* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				*/
-				get_template_part( 'template-parts/content', get_post_format() ); ?>
+			<!--div class="content-wrap general-info"-->
+				<?php if ( CFS()->get('story_cover') ) : ?>
+					<div class="content-wrap general-info flex">
+					<div class="book-covers">
+						<img src="<?php echo CFS()->get('story_cover'); ?>" alt=""/>
+					</div>
+				<?php else : ?>
+				<div class="content-wrap general-info">
+				<?php endif; ?>
+				<div class="write-up">
+					<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+				</div>
 			</div>
 		</section>
 	<?php endwhile;
@@ -50,5 +55,5 @@ get_header(); ?>
 </div><!-- #primary -->
 <?php include_once 'inc/svg-paths.php' ?>
 
-<?php //get_sidebar();?>
+<?php get_sidebar();?>
 <?php get_footer(); ?>

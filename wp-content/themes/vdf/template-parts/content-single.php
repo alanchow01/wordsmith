@@ -44,8 +44,10 @@
 			<div class="blog-sidebar">
 				<?php dynamic_sidebar( 'sidebar-2' ); ?>
 			</div>
+			<?php /*
 			<footer class="entry-footer">
 				<?php feistner_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
+			*/ ?>
 		</div>
 	</article><!-- #post-## -->

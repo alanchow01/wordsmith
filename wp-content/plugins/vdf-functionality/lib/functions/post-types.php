@@ -121,8 +121,8 @@ function stories() {
 	$labels = array(
 		'name'                  => _x( 'Stories', 'Post Type General Name', 'text_domain' ),
 		'singular_name'         => _x( 'Story', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'             => __( 'Stories', 'text_domain' ),
-		'name_admin_bar'        => __( 'Stories', 'text_domain' ),
+		'menu_name'             => __( 'Free To Read', 'text_domain' ),
+		'name_admin_bar'        => __( 'Free To Read', 'text_domain' ),
 		'archives'              => __( 'Story Archives', 'text_domain' ),
 		'parent_item_colon'     => __( 'Parent Story:', 'text_domain' ),
 		'all_items'             => __( 'All Stories', 'text_domain' ),

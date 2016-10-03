@@ -804,7 +804,7 @@ object {
   width: 100%; }
   @media (min-width: 800px) {
     .site-main {
-      margin: 0rem auto 0;
+      margin: 0 auto;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
@@ -912,6 +912,9 @@ object {
       -ms-flex: 0 1 30%;
           flex: 0 1 30%; }
 
+.byline {
+  font-style: italic; }
+
 @media (min-width: 800px) {
   .posts {
     padding-top: 5rem; } }
@@ -1002,14 +1005,15 @@ object {
       margin-top: -8rem; } }
 
 .single-post .post-credits, .single-story .post-credits {
+  background: rgba(0, 0, 0, 0.6);
   position: absolute;
   bottom: 0;
   width: 100%; }
 
 .single-post .entry-title, .single-post .entry-meta, .single-story .entry-title, .single-story .entry-meta {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  padding-top: 1rem; }
+  max-width: 900px;
+  padding-top: 1rem;
+  margin: 0 auto; }
 
 .single-post .entry-meta, .single-story .entry-meta {
   padding-bottom: 1rem; }
@@ -1068,6 +1072,9 @@ object {
   .single-post .site-main .no-post-image, .single-post .type-post .no-post-image, .single-post .post-pict .no-post-image, .single-post .type-story .no-post-image, .single-story .site-main .no-post-image, .single-story .type-post .no-post-image, .single-story .post-pict .no-post-image, .single-story .type-story .no-post-image {
     background: url(../../assets/default_img.jpg); }
 
+.single-story a:hover, .single-story a:focus {
+  color: #000; }
+
 .single-story .blog-post-wrapper {
   background: #fff;
   width: 100%;
@@ -1079,9 +1086,13 @@ object {
     margin: 0;
     padding-top: 1rem; } }
 
-.single-story .widget-container section, .post-type-archive-story .widget-container section, .error404 .widget-container section {
-  visibility: hidden; }
-
+/*
+.single-story, .post-type-archive-story, .error404, .home, .page {
+  .widget-container section {
+    visibility: hidden;
+  }
+}
+*/
 .comments-area {
   border-top: 1px solid white;
   color: #000;
@@ -1185,7 +1196,7 @@ object {
     .site-footer {
       width: 100%; } }
 
-.blog .site-footer, .single-post .site-footer, .category .site-footer, .single-story .site-footer, .error404 .site-footer {
+.blog .site-footer, .single-post .site-footer, .category .site-footer, .single-story .site-footer, .error404 .site-footer, .archive .site-footer, .page .site-footer {
   height: 20rem;
   position: relative;
   margin-top: -10rem;
@@ -1202,6 +1213,7 @@ object {
 
 .widget-area {
   z-index: 99;
+  margin-top: 10rem;
   position: relative; }
   .widget-area a:link, .widget-area a:visited {
     color: #000; }
@@ -1256,6 +1268,9 @@ object {
         -ms-flex: 0 1 50%;
             flex: 0 1 50%;
     margin: 0; }
+
+.blog .widget-area {
+  margin-top: 0; }
 
 #responsive-menu {
   margin-top: 6rem !important; }

@@ -64,4 +64,5 @@ foreach($loop as $row) : ?>
 <?php include_once 'inc/svg-paths.php' ?>
 
 <?php
+get_sidebar();
 get_footer();

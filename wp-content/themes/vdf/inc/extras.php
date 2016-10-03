@@ -54,7 +54,7 @@ function feistner_wp_trim_excerpt( $text ) {
         $text = apply_filters( 'the_content', $text );
         $text = str_replace( ']]>', ']]&gt;', $text );
         // indicate allowable tags
-        $allowed_tags = '<p>,<a>,<em>,<strong>,<blockquote>,<cite>';
+        $allowed_tags = '<p>';//'<p>,<a>,<em>,<strong>,<blockquote>,<cite>';
         $text = strip_tags( $text, $allowed_tags );
         // change to desired word count
         $excerpt_word_count = 25;

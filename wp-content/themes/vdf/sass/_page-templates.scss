@@ -67,7 +67,7 @@
 .site-main {
   width:100%;
   @include tablet {
-    margin: 0rem auto 0;
+    margin: 0 auto;
     display: flex;
     align-content: space-between;
     flex-flow: row wrap;
@@ -155,6 +155,10 @@
 }
 .book-covers {
   flex: 0 1 30%;
+}
+
+.byline {
+  font-style: italic;
 }
 
 // Blog styles
@@ -258,14 +262,15 @@
     }
   }
   .post-credits {
+    background: rgba(0,0,0,.6);
     position: absolute;
     bottom: 0;
     width: 100%;
   }
   .entry-title, .entry-meta {
-    width: 100%;
-    background: rgba(0,0,0,.6);
+    max-width: 900px;
     padding-top: 1rem;
+    margin: 0 auto;
   }
   .entry-meta {
     padding-bottom: 1rem;
@@ -325,6 +330,9 @@
 
 // Single story
 .single-story {
+  a:hover, a:focus {
+    color: #000;
+  }
   .blog-post-wrapper {
     background: #fff;
     width: 100%;
@@ -338,12 +346,13 @@
     }
   }
 }
-.single-story, .post-type-archive-story, .error404 {
+/*
+.single-story, .post-type-archive-story, .error404, .home, .page {
   .widget-container section {
     visibility: hidden;
   }
 }
-
+*/
 // Comments Section
 .comments-area {
   border-top: 1px solid white;
@@ -446,7 +455,7 @@
     width: 100%;
   }
 }
-.blog, .single-post, .category, .single-story, .error404 {
+.blog, .single-post, .category, .single-story, .error404, .archive, .page {
   .site-footer {
     height: 20rem;
     position: relative;
@@ -457,10 +466,10 @@
     align-items: flex-end;
   }
 }
-
 // footer widget area
 .widget-area {
   z-index: 99;
+  margin-top: 10rem;
   a:link, a:visited {
     color: #000;
   }
@@ -510,7 +519,9 @@
   }
 }
 // End footer widgets
-
+.blog .widget-area {
+  margin-top: 0;
+}
 
 #responsive-menu {
   margin-top: 6rem !important;

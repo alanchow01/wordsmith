@@ -73,4 +73,5 @@ get_header(); ?>
 <?php include_once 'inc/svg-paths.php' ?>
 
 <?php
+get_sidebar();
 get_footer();
