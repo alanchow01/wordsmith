@@ -49,9 +49,9 @@
   padding-top: 8rem;
   z-index: 1;
   img {
-    width: 75%;
+    //width: 75%;
     @include tablet {
-      width: 100%;
+      //width: 100%;
     }
   }
   @include tablet {
@@ -88,6 +88,7 @@
   display: flex;
   align-items: center;
   @include tablet {
+    width: 50%;
     flex: 0 1 50%;
     min-height: 29rem;
     margin-bottom: 1rem;
@@ -105,6 +106,7 @@
   }
   &:nth-child(odd) {
     @include tablet {
+      float: left;
       margin-top: auto;
       justify-content: flex-end;
       transform: skewY(12deg);
@@ -114,14 +116,17 @@
     }
     .write-up {
       order: 2;
+      float: left;
     }
     .book-covers {
       order: 1;
+      float: right;
       margin-right: 1.5rem;
     }
   }
   &:nth-child(even) {
     @include tablet {
+      float: right;
       transform: skewY(-12deg);
       .content-wrap {
         transform: skewY(12deg);
@@ -129,9 +134,11 @@
     }
     .write-up {
       order: 1;
+      float: right;
     }
     .book-covers {
       order: 2;
+      float: left;
       margin-left: 1.5rem;
     }
   }
@@ -151,9 +158,11 @@
   }
 }
 .write-up {
+  width: 65%;
   flex: 0 1 70%;
 }
 .book-covers {
+  width: 25%;
   flex: 0 1 30%;
 }
 
@@ -468,6 +477,7 @@
 }
 // footer widget area
 .widget-area {
+  content: ' ';
   z-index: 99;
   margin-top: 10rem;
   a:link, a:visited {
@@ -514,13 +524,25 @@
     justify-content: space-between;
   }
   .widget {
+    width: 49%;
     flex: 0 1 50%;
     margin: 0;
   }
 }
+.content-area:after {
+  content: ' ';
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
 // End footer widgets
 .blog .widget-area {
   margin-top: 0;
+}
+.widget_categories, .widget_recent_entries {
+  display: inline-block;
+  padding-bottom: 2em;
 }
 
 #responsive-menu {

@@ -31,7 +31,7 @@ get_header(); ?>
 			<?php foreach($all_stories as $post) : setup_postdata( $post ); ?>
 				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
 
-				<section class="post-section" style="background: linear-gradient(rgba(0,0,0,0.8)0%,rgba(0,0,0,0)100%), url('<?php echo $thumb[0];?>') no-repeat 0 50%; background-size: cover, cover;">
+				<section class="post-section" style="background-color: rgba(0,0,0,0.8); background: linear-gradient(rgba(0,0,0,0.8)0%,rgba(0,0,0,0)100%), url('<?php echo $thumb[0];?>') no-repeat 0 50%; background-size: cover, cover;">
 					<div class="content-wrap flex">
 						<?php if ( CFS()->get('book_cover') ) : ?>
 							<div class="book-covers">
