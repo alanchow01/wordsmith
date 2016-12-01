@@ -18,12 +18,14 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<style>
 	.post-section:nth-child(odd), .posts:nth-child(odd) {
-		-webkit-clip-path: url('#clip-shape-right');
-		clip-path: url('#clip-shape-right');
+		clip-path: url('#clip-shape-right'); /*fallback for firefox*/
+    -webkit-clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%) /*fallback for safari*/
 	}
 	.post-section:nth-child(even), .posts:nth-child(even) {
-		-webkit-clip-path: url('#clip-shape-left');
-		clip-path: url('#clip-shape-left');
+		clip-path: url('#clip-shape-left');  /*fallback for firefox*/
+    -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%); /*fallback for safari*/
 	}
 	@media screen and (min-width: 800px) {
 		.post-section:nth-child(odd), .post-section:nth-child(even),
