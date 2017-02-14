@@ -17,17 +17,20 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<style>
+	.site-header {
+	  clip-path: url('#clip-header');
+	}
 	.post-section:nth-child(odd), .posts:nth-child(odd) {
 		clip-path: url('#clip-shape-right'); /*fallback for firefox*/
-    -webkit-clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
-    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%) /*fallback for safari*/
+    -webkit-clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%); /*fallback for safari*/
+    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%)
 	}
 	.post-section:nth-child(even), .posts:nth-child(even) {
 		clip-path: url('#clip-shape-left');  /*fallback for firefox*/
-    -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
-    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%); /*fallback for safari*/
+    -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%); /*fallback for safari*/
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
 	}
-	@media screen and (min-width: 800px) {
+	@media screen and (min-width: 899px) {
 		.post-section:nth-child(odd), .post-section:nth-child(even),
 		.posts:nth-child(odd), .posts:nth-child(even) {
 			-webkit-clip-path: none;

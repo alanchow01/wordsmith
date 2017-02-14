@@ -27,17 +27,14 @@ a {
 /* Menus */
 
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
+	padding-top:1rem;
 	width: 100%;
-
+	text-align: center;
 	ul {
-		display: none;
 		list-style: none;
-		margin: 0;
 		padding-left: 0;
-
+		max-width: 900px;
+		margin: 0 auto;
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
@@ -77,16 +74,18 @@ a {
 		}
 	}
 	li {
-		float: left;
-		position: relative;
-
+		display: inline-block;
+		padding: 0 2rem;
+		margin-left:auto;
 		&:hover > a,
 		&.focus > a {
+			color: #000;
 		}
 	}
 	a {
 		display: block;
 		text-decoration: none;
+		color: #ffffff;
 	}
 
 	.current_page_item > a,
