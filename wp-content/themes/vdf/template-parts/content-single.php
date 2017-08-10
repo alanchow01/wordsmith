@@ -17,7 +17,7 @@
 			*/?>
 			<?php if (has_post_thumbnail() ): ?>
 				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-				<div class="post-pict"  style="background: url('<?php echo $thumb[0];?>') no-repeat 0 50%; background-size: cover;">
+				<div class="post-pict"  style="background: url('<?php echo $thumb[0];?>') repeat-x center 0;">
 				</div>
 
 			<?php else: ?>
