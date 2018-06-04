@@ -151,33 +151,17 @@
 
 // Blog styles
 .posts {
-  @include tablet {
-    padding-top: 5rem;
-  }
+  background-color: rgba(157, 193, 102, 1);
   &:nth-child(odd) {
-    background-color: rgba(157, 193, 102, 1);
-  }
-  &:nth-child(even) {
     background-color: rgba(101, 191, 143, 1);
   }
   @include tablet {
-    &:nth-child(odd) {
-      background-color: rgba(157, 193, 102, 1);
-    }
-    &:nth-child(even) {
-      background-color: rgba(101, 191, 143, 1);
-    }
-    &:nth-child(3n+3) {
-      background-color: rgba(101, 191, 143, 1);
-    }
-    &:nth-child(4n+4) {
-      background-color: rgba(157, 193, 102, 1);
-    }
-    &:nth-child(7n+7) {
-      background-color: rgba(101, 191, 143, 1);
-    }
-    &:nth-child(9n+9) {
-      background-color: rgba(157, 193, 102, 1);
+    padding-top: 5rem;
+      &:nth-child(odd) {
+        background-color: rgba(157, 193, 102, 1);
+      }
+      &:nth-child(4n+1), &:nth-child(4n) {
+        background-color: rgba(101, 191, 143, 1);
     }
   }
 }
@@ -205,8 +189,6 @@
     }
   }
 }
-
-
 
 .post-img-wrap {
   width: 100%;
@@ -256,7 +238,7 @@
 }
 
 // single blog post
-.single-post, .single-story {
+.single-post, .single-story, .single-query {
   .entry-header {
     position: relative;
     margin-top: -17rem;
@@ -315,7 +297,7 @@
       margin-top: 2.5rem;
     }
   }
-  .site-main, .type-post, .post-pict, .type-story {
+  .site-main, .type-post, .post-pict, .type-story, .type-query {
     width: 100%;
     .post-pict, .no-post-image {
       z-index: -1;
@@ -334,7 +316,7 @@
 
 
 // Single story
-.single-story {
+.single-story, .single-query {
   a:hover, a:focus {
     color: #000;
   }
@@ -451,7 +433,7 @@
     width: 100%;
   }
 }
-.blog, .single-post, .category, .single-story, .error404, .archive, .page {
+.blog, .single-post, .category, .single-story, .single-query, .error404, .archive, .page {
   .site-footer {
     height: 20rem;
     position: relative;

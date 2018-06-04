@@ -22,14 +22,14 @@ foreach($loop as $row) : ?>
 								</div>
 							</section>
 							<section class="post-section img-sec">
-								<div class="post-img-wrap skew-left" style="background: #227722 url('<?php echo $row['section_image']?>') no-repeat; background-size: cover;">
+								<div class="post-img-wrap skew-left" style="background: #227722 url('<?php echo $row['section_image']?>') 50% 50% no-repeat; background-size: cover;">
 								</div>
 							</section>
 
 						<?php else: ?>
 
 						<section class="post-section img-first">
-							<div class="post-img-wrap skew-right" style="background: #227722 url('<?php echo $row['section_image']?>') no-repeat; background-size: cover;">
+							<div class="post-img-wrap skew-right" style="background: #227722 url('<?php echo $row['section_image']?>') 50% 50% no-repeat; background-size: cover;">
 							</div>
 						</section>
 							<section class="post-section content-sec">

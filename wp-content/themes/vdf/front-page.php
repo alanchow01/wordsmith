@@ -57,7 +57,7 @@ get_header(); ?>
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 		<?php endif; ?>
 		<?php
-		$id = 113; //56; //113;
+		$id = 547; //56; //113;
 		$post = get_post( $id );
 		$content = apply_filters('the_content', $post->post_content);
 		?>
